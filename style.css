@@ -1,64 +1,274 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=MuseoModerno&family=Nunito+Sans:opsz,wght@6..12,700&display=swap');
 
-*{
-    margin: 0;
+:root {
+  --font-family: "Inter", sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* Light Mode */
+  --background-color: #ffffff;
+  --text-color-primary: #000000;
+  --text-color-secondary: #555555;
+  --accent-color: #1e90ff;
+  --border-color: #e0e0e0;
+  --link-hover-color: #1a70c2;
+}
+
+/* Dark Mode  */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color-primary: #e0e0e0;
+  --text-color-secondary: #a0a0a0;
+  --accent-color: #4a90e2;
+  --border-color: #333333;
+  --link-hover-color: #6a96e5;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem 1rem;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 22px;
+  width: auto;
+  max-width: 100%;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--text-color-secondary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-color-primary);
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+/* Main Profile Section Layout */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Profile Image Container */
+.profile-image-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Profile Image */
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+/* Bio Content */
+.profile-bio-content {
+  text-align: center;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.job-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.bio-text {
+  font-size: 1rem;
+  color: var(--text-color-primary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.social-icon-link {
+  color: var(--text-color-primary);
+  transition: color 0.2s ease;
+}
+
+.social-icon-link:hover {
+  color: var(--accent-color);
+}
+
+/* Medium devices (600px and up) */
+@media (min-width: 600px) {
+  body {
+    padding: 2rem 1.5rem;
+  }
+
+  .profile-section {
+    gap: 3.5rem;
+  }
+
+  .profile-image-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .job-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large devices (768px and up) */
+@media (min-width: 768px) {
+  body {
+    padding: 3rem 2rem;
+  }
+
+  .main-header {
+    margin-bottom: 6rem;
+    flex-wrap: nowrap;
+  }
+
+  .profile-section {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .profile-image-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .profile-bio-content {
+    text-align: left;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    max-width: 550px;
+  }
 
+  .name {
+    font-size: 3rem;
+  }
+
+  .job-title {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+  }
+
+  .bio-text {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+    font-size: 1.5rem;
+    gap: 2rem;
+  }
 }
 
-.body{
-    width: 100%;
-    min-height: 100vh;
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
-    position: relative;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+/* Extra large devices (992px and up) */
+@media (min-width: 992px) {
+  .profile-section {
+    gap: 5rem;
+  }
 
-}
+  .profile-image-container {
+    width: 280px;
+    height: 280px;
+  }
 
-.intro{
-    position:relative;
-    top: 26%;
-    right: -136px;
+  .name {
+    font-size: 3.5rem;
+  }
 }
-.intro h1{
-    font-family: 'Nunito Sans';
-    font-size: 50px;
-    color: black;
-    font-weight: 300;
-    padding: 8px 1%;
-    text-align:justify;
-    margin-block: -6px;
-}
-.intro h2{
-    font-family: 'Nunito Sans';
-    font-size: 15px;
-    color: rgb(71, 71, 71);
-    font-weight: 150px;
-    padding: 1px -50%;
-    top: 90%;
-    margin-left: 6px;
-    
-
-}
-.intro h3{
-    font-family: 'Nunito Sans';
-    font-size: 20px;
-    color: black;
-    font-weight: 300;
-    padding: -7px 1%;
-    margin-top: -1%;
-    margin-left: 6px;
-}
-.pro{
-        width: 401px;
-        position: absolute;
-        top: -190px;
-        left: -250px;
-}
-  

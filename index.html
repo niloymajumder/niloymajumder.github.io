@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niloy Majumder | Profile</title>
+    <meta name="description" content="Niloy Majumder's personal profile. A passionate technophile, indie game dev, and UI/UX designer.">
 
+    <!-- Google Fonts: A simple sans-serif font like Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons (socials, toggle) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Link to the custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="/favicon.ico">
+</head>
 <body>
-  <div class="body">
-    <div class="intro">
-      <h1> 
-        Hi, I'm Niloy
-      </h1>
-        <h3>
-          Product Designer | Indie Developer
-        </h3>
-        <h2>
-         Website brewing soon! Until then, have a cup of coffee :)
-        </h2>
-        <a>
-          <img class="pro" src="./img/pro.png" />
-        </a>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="main-header">
+            <!-- 
+            <div class="header-logo">
+                <i class="fas fa-user-circle"></i>
+            </div>
+          -->
+        
+            <div class="header-logo">
+                <img src="img/nm_black.png" id="site-logo" alt="Niloy Majumder Logo" class="logo-image">
+
+
+            </div> 
+            
+            <!-- Option 3: Using initials in a circle (uncomment this and comment out Option 1) -->
+            <!-- <div class="header-logo">
+                <div class="logo-initials">NM</div>
+            </div> -->
+            
+            <nav class="main-nav">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Projects</a>
+                <a href="#" class="nav-link">Blog</a>
+                <a href="#" class="nav-link">Resume</a>
+                <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
+                    <!-- Icon will be inserted by JavaScript -->
+                </button>
+            </nav>
+        </header>
+
+        <!-- Main Content Section -->
+        <main class="profile-section">
+            <div class="profile-image-container">
+                <!-- Replace with your actual image path -->
+                <img src="img/profilev2.png" alt="Niloy Majumder" class="profile-image">
+            </div>
+
+            <div class="profile-bio-content">
+                <h1 class="name">Niloy Majumder</h1>
+                <p class="job-title">UI/UX Designer • Indie Developer</p>
+                <p class="bio-text">
+                    Hey, I'm Niloy, a passionate technophile who finds joy in the world of development. I have a particular interest in indie game development. I'm always eager to take on new challenges and enhance my problem-solving skills and taking new challenges. Beyond the technical world, I am also interested in UI/UX design and art, adding a creative flair to my work. Join me as I explore the exciting crossroads of technology, creativity, and innovation.
+                </p>
+                
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="mailto:niloymajumderr@gmail.com" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/niloymajumder" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/niloymajumderr" target="_blank" rel="noopener noreferrer" class="social-icon-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
     </div>
 
+    <script src="script.js"></script>  <!-- script--> 
 </body>
-
 </html>
