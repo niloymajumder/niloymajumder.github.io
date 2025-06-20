@@ -34,11 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load theme on page load
-    const savedTheme = localStorage.getItem('theme');
+   /* OS theme preference logic
+   const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         setTheme(savedTheme);
     } else {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         setTheme(prefersDark ? 'dark' : 'light');
     }
+  */
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  setTheme(savedTheme);
+} else {
+  setTheme('light'); // Always load light mode unless user chose dark before
+}
 });
